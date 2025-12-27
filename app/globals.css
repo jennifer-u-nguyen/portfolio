@@ -36,7 +36,6 @@
   /* Animations */
   --animate-in: enter 0.5s ease-out;
   --animate-fade-in: enter 0.5s ease-out;
-  /* simplified */
 
   @keyframes enter {
     from {

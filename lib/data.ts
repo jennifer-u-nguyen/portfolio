@@ -10,9 +10,11 @@ export const PROJECTS = [
   {
     id: "amazon-grocery",
     title: "Amazon Grocery Robotics — Autonomous Picking System",
-    year: "2025",
-    role: "Hardware Development Engineer Intern",
-    metric: "Reduced picking error rate by 15% through improved gripper kinematics.", // Placeholder metric based on context
+    description: "Developing next-generation autonomous grasping solutions for diverse grocery items.",
+    image: "/project-placeholder.png",
+    // year: "2025", // Removed from card as requested
+    // role: "Hardware Development Engineer Intern", // Removed from card as requested
+    metric: "Reduced picking error rate by 15% through improved gripper kinematics.",
     tags: ["Mechanical Design", "Robotics", "Prototyping"],
     problem: "Existing picking systems struggled with irregular grocery items, leading to high drop rates.",
     approach: "Designed a new compliant gripper mechanism with adaptive force control.",
@@ -22,9 +24,9 @@ export const PROJECTS = [
   {
     id: "keutsch-lab",
     title: "Keutsch Lab — HAB Exposure Capsule",
-    year: "2024–Present",
-    role: "Undergraduate Researcher",
-    metric: "Achieved 100% data recovery in 3 stratospheric flights.", // Placeholder metric
+    description: "A stratospheric research capsule designed for extreme thermal and pressure conditions.",
+    image: "/project-placeholder.png",
+    metric: "Achieved 100% data recovery in 3 stratospheric flights.",
     tags: ["Mechanical Design", "Thermal Analysis", "Research"],
     problem: "Needed a lightweight, pressurized capsule to house delicate sensors in near-space conditions.",
     approach: "Engineered a carbon-fiber composite shell with active thermal regulation.",
@@ -34,9 +36,9 @@ export const PROJECTS = [
   {
     id: "amazon-robotics-camera",
     title: "Amazon Robotics — Multi-Camera Array",
-    year: "2024",
-    role: "Hardware Development Engineer Intern",
-    metric: "Improved calibration speed by 40% with tool-less adjustment mechanism.", // Placeholder metric
+    description: "High-precision camera calibration tooling for automated workstation assembly.",
+    image: "/project-placeholder.png",
+    metric: "Improved calibration speed by 40% with tool-less adjustment mechanism.",
     tags: ["Mechanical Design", "DFM", "Optics"],
     problem: "Camera calibration was a manual, time-consuming process causing production bottlenecks.",
     approach: "Designed a precise 6-DOF adjustment mount with kinematic coupling.",
@@ -46,9 +48,9 @@ export const PROJECTS = [
   {
     id: "lockheed-doe",
     title: "Lockheed Martin — Manufacturing DOE",
-    year: "2023",
-    role: "Product Quality Intern",
-    metric: "Reduced scrap rate by 12% in composite layup process.", // Placeholder metric
+    description: "Statistical process control analysis to reduce manufacturing cycle time and defects.",
+    image: "/project-placeholder.png",
+    metric: "Reduced scrap rate by 12% in composite layup process.",
     tags: ["Data Analysis", "Manufacturing", "Process Improvement"],
     problem: "High variability in composite part thickness led to rework.",
     approach: "Designed and executed a Design of Experiments (DOE) to identify critical process parameters.",
@@ -107,12 +109,24 @@ export const SKILLS = [
   }
 ];
 
-export const ABOUT = {
-  text: "I approach engineering as a pursuit of reliability and elegance in complex systems. Whether it's designing a robotic end-effector to handle delicate groceries or a pressurized capsule for the stratosphere, I focus on first-principles thinking, rigorous validation, and iterative refinement. I believe that the best hardware disappears—it just works, robustly and efficiently."
-};
+export const COURSEWORK = [
+  "ES125: Mechanical Systems",
+  "ES181: Engineering Thermodynamics",
+  "ES120: Mechanics of Solids",
+  "ES183: Heat Transfer",
+  "ES51: Computer-Aided Machine Design",
+  "ES192: Materials Selection & Design",
+  "ES50: Introduction to Electrical Engineering",
+  "AP50: Physics as a Foundation for Science and Engineering",
+  "ES105: Humanitarian Design Projects",
+  "M21A: Multivariable Calculus",
+  "M21B: Linear Algebra & Differential Equations",
+  "CS79: Design of Useful and Usable Interactive Systems",
+];
+
 
 export const CONTACT = {
-  email: "jennifer.nguyen@example.com", // Placeholder
-  linkedin: "https://linkedin.com/in/jennifer-nguyen-placeholder", // Placeholder
+  email: "jenniferutnguyen@gmail.com",
+  linkedin: "https://www.linkedin.com/in/jennifer-u-nguyen/",
   resume: "#", // Placeholder
 };
