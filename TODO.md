@@ -1,0 +1,10 @@
+- [ ] Add PRD.md + CONTENT.md
+- [ ] Scaffold layout + sticky nav
+- [ ] Hero section
+- [ ] Selected Projects (cards + expand)
+- [ ] Experience snapshot
+- [ ] Skills grouped grid
+- [ ] About
+- [ ] Contact
+- [ ] Mobile polish + accessibility pass
+- [ ] Deploy
