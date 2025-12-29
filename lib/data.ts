@@ -7,11 +7,12 @@ export const HERO = {
 };
 
 export const PROJECTS = [
+  // images stored in /public
   {
-    id: "amazon-grocery",
-    title: "Amazon Grocery Robotics — Autonomous Picking System",
+    id: "es51-robot",
+    title: "Harvard ES51 - Turf Wars Robot",
     description: "Developing next-generation autonomous grasping solutions for diverse grocery items.",
-    image: "/project-placeholder.png",
+    images: ["/project-placeholder.png", "/demo-2.svg", "/demo-3.svg"],
     metric: "Reduced picking error rate by 15% through improved gripper kinematics.",
     tags: ["Mechanical Design", "Robotics", "Prototyping"],
     problem: "Existing picking systems struggled with irregular grocery items, leading to high drop rates.",
@@ -20,10 +21,10 @@ export const PROJECTS = [
     outcome: "Selected for pilot implementation in next-gen fulfillment centers.",
   },
   {
-    id: "keutsch-lab",
-    title: "Keutsch Lab — HAB Exposure Capsule",
+    id: "keutsch-peapod",
+    title: "Keutsch Lab — Stratospheric Particle Exposure Analysis Device",
     description: "A stratospheric research capsule designed for extreme thermal and pressure conditions.",
-    image: "/project-placeholder.png",
+    images: ["/project-placeholder.png"],
     metric: "Achieved 100% data recovery in 3 stratospheric flights.",
     tags: ["Mechanical Design", "Thermal Analysis", "Research"],
     problem: "Needed a lightweight, pressurized capsule to house delicate sensors in near-space conditions.",
@@ -32,10 +33,10 @@ export const PROJECTS = [
     outcome: "Successful deployment gathering crucial atmospheric data.",
   },
   {
-    id: "amazon-robotics-camera",
-    title: "Amazon Robotics — Multi-Camera Array",
+    id: "wood-MDEA-gantry",
+    title: "Microrobotics Lab — MDEA Gantry",
     description: "High-precision camera calibration tooling for automated workstation assembly.",
-    image: "/project-placeholder.png",
+    images: ["/project-placeholder.png"],
     metric: "Improved calibration speed by 40% with tool-less adjustment mechanism.",
     tags: ["Mechanical Design", "DFM", "Optics"],
     problem: "Camera calibration was a manual, time-consuming process causing production bottlenecks.",
@@ -44,10 +45,10 @@ export const PROJECTS = [
     outcome: "Standardized across all new workstation builds.",
   },
   {
-    id: "lockheed-doe",
-    title: "Lockheed Martin — Manufacturing DOE",
+    id: "glow-grid",
+    title: "Harvard ES50 — Glow Grid",
     description: "Statistical process control analysis to reduce manufacturing cycle time and defects.",
-    image: "/project-placeholder.png",
+    images: ["/project-placeholder.png"],
     metric: "Reduced scrap rate by 12% in composite layup process.",
     tags: ["Data Analysis", "Manufacturing", "Process Improvement"],
     problem: "High variability in composite part thickness led to rework.",

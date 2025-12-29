@@ -25,18 +25,65 @@ export default function Projects() {
 
 function ProjectCard({ project }: { project: typeof PROJECTS[0] }) {
     const [isExpanded, setIsExpanded] = useState(false);
+    const [activeImageIndex, setActiveImageIndex] = useState(0);
+
+    // Mouse handlers removed in favor of arrow buttons
 
     return (
         <div className="group rounded-2xl border border-border/50 bg-card text-card-foreground shadow-sm transition-all hover:shadow-md overflow-hidden flex flex-col">
             <div className="cursor-pointer" onClick={() => setIsExpanded(!isExpanded)}>
                 {/* Image Section */}
-                <div className="relative aspect-video w-full overflow-hidden bg-muted">
+                <div className="relative aspect-video w-full overflow-hidden bg-muted group/image">
                     <Image
-                        src={project.image}
+                        src={project.images[activeImageIndex]}
                         alt={project.title}
                         fill
-                        className="object-cover transition-transform duration-500 group-hover:scale-105"
+                        className="object-cover transition-transform duration-500"
                     />
+
+                    {/* Slideshow Arrows (only visible on hover if multiple images) */}
+                    {project.images.length > 1 && (
+                        <>
+                            {/* Left Arrow */}
+                            <button
+                                onClick={(e) => {
+                                    e.stopPropagation();
+                                    setActiveImageIndex((prev) => (prev === 0 ? project.images.length - 1 : prev - 1));
+                                }}
+                                className="absolute left-2 top-1/2 -translate-y-1/2 p-2 rounded-full bg-white/70 text-black opacity-0 group-hover/image:opacity-100 transition-opacity hover:bg-white/90"
+                            >
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                    <path d="m15 18-6-6 6-6" />
+                                </svg>
+                            </button>
+
+                            {/* Right Arrow */}
+                            <button
+                                onClick={(e) => {
+                                    e.stopPropagation();
+                                    setActiveImageIndex((prev) => (prev === project.images.length - 1 ? 0 : prev + 1));
+                                }}
+                                className="absolute right-2 top-1/2 -translate-y-1/2 p-2 rounded-full bg-white/70 text-black opacity-0 group-hover/image:opacity-100 transition-opacity hover:bg-white/90"
+                            >
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                    <path d="m9 18 6-6-6-6" />
+                                </svg>
+                            </button>
+                        </>
+                    )}
+
+                    {/* Slideshow Indicators */}
+                    {project.images.length > 1 && (
+                        <div className="absolute bottom-2 left-1/2 -translate-x-1/2 flex gap-1.5 opacity-0 group-hover/image:opacity-100 transition-opacity">
+                            {project.images.map((_, idx) => (
+                                <div
+                                    key={idx}
+                                    className={`h-1.5 rounded-full transition-all ${idx === activeImageIndex ? "w-4 bg-white" : "w-1.5 bg-white/50"
+                                        }`}
+                                />
+                            ))}
+                        </div>
+                    )}
                 </div>
 
                 {/* Content Preview */}
