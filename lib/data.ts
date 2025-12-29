@@ -12,8 +12,6 @@ export const PROJECTS = [
     title: "Amazon Grocery Robotics — Autonomous Picking System",
     description: "Developing next-generation autonomous grasping solutions for diverse grocery items.",
     image: "/project-placeholder.png",
-    // year: "2025", // Removed from card as requested
-    // role: "Hardware Development Engineer Intern", // Removed from card as requested
     metric: "Reduced picking error rate by 15% through improved gripper kinematics.",
     tags: ["Mechanical Design", "Robotics", "Prototyping"],
     problem: "Existing picking systems struggled with irregular grocery items, leading to high drop rates.",
@@ -59,41 +57,63 @@ export const PROJECTS = [
   }
 ];
 
-export const EXPERIENCE = [
-  {
-    company: "Amazon Grocery Robotics & Automation",
-    role: "Hardware Development Engineer Intern",
-    period: "Summer 2025",
-    description: "Developing next-gen autonomous manipulation systems for grocery fulfillment."
-  },
-  {
-    company: "Harvard Keutsch Lab",
-    role: "Undergraduate Researcher",
-    period: "Aug 2024–Present",
-    description: "Designing stratospheric instrumentation payloads for atmospheric research."
-  },
-  {
-    company: "Amazon Robotics & Mechatronics",
-    role: "Hardware Development Engineer Intern",
-    period: "Summer 2024",
-    description: "Engineered sensor integration solutions for mobile robotic units."
-  },
-  {
-    company: "Lockheed Martin Aeronautics",
-    role: "Product Quality Intern",
-    period: "Summer 2023",
-    description: "Analyzed manufacturing quality data to drive process improvements in F-35 production."
-  }
-];
+export const EXPERIENCE = {
+  industry: [
+    {
+      company: "Amazon Grocery Robotics & Automation",
+      role: "Hardware Development Engineer Intern",
+      period: "May - August 2025",
+      description: "Developed an autonomous robotic picking system fully integrated with vision, motion control, and end-of-arm tooling"
+    },
+    {
+      company: "Harvard Reimagining Experiential Education & Fabrication (REEF) Makerspace",
+      role: "Maker Fellow",
+      period: "August 2024 - Present",
+      description: "Trained and advised others in the Harvard SEAS Reimagining Experiential Education & Fabrication (REEF) Makerspace to machine their academic and personal projects. This includes training in laser cutting, dye sublimation, 3D printing, wood shop machinery, casting, soldering, hand tools, etc."
+    },
+    {
+      company: "Amazon Robotics & Mechatronics",
+      role: "Hardware Development Engineer Intern",
+      period: "May - August 2024",
+      description: "Designed multi-camera presentation array, replacing previous scan tunnels to increase item eligibility by over 25%."
+    },
+    {
+      company: "Lockheed Martin Aeronautics",
+      role: "Product Quality Intern",
+      period: "May - August 2023",
+      description: "Revamped radar processing chips manufacturing process for high manufacturing yield and quality."
+    },
+    {
+      company: "Lockheed Martin Aeronautics",
+      role: "Facility Engineer Intern",
+      period: "August 2021 - August 2022",
+      description: "Strategized production reliability by analyzing previous equipment failures and implementing new preventative maintenance strategies."
+    }
+  ],
+  research: [
+    {
+      company: "Harvard Keutsch Lab",
+      role: "Undergraduate Researcher",
+      period: "Aug 2024 - Present",
+      description: "Created an opening/closing capsule for a high-altitude balloon (HAB) system that automates the process of exposing chemical samples to the stratosphere upon ascension and safely returns to the troposphere."
+    },
+    {
+      company: "Harvard Microrobotics Lab",
+      role: "Undergraduate Researcher",
+      period: "October 2023 - May 2024",
+      description: "Modified a 3D printer to automate multi-layered dielectric actuator elastomer (MDEA) production, a process for producing microelectronics currently performed by hand."
+    }
+  ]
+};
 
 export const SKILLS = [
   {
     category: "Mechanical & CAD",
-    items: ["SolidWorks", "NX", "Fusion 360", "GD&T", "DFM/DFA", "FEA"]
+    items: ["SolidWorks", "Fusion 360", "GD&T", "DFM/DFA"]
   },
   {
     category: "Simulation & Analysis",
-    items: ["ANSYS Mechanical", "COMSOL", "MATLAB", "Thermal Analysis"]
+    items: ["COMSOL", "MATLAB", "Thermal Analysis"]
   },
   {
     category: "Robotics & Controls",
@@ -105,7 +125,7 @@ export const SKILLS = [
   },
   {
     category: "Fabrication",
-    items: ["3D Printing", "Laser Cutting", "Machining (Mill/Lathe)", "Composites"]
+    items: ["Injection Molding", "3D Printing", "Laser Cutting", "CNC Mill", "Lathe", "Waterjet", "Drill Press", "Bandsaws"]
   }
 ];
 
