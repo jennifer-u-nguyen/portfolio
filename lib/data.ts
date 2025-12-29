@@ -1,9 +1,13 @@
 export const HERO = {
   name: "Jennifer Nguyen",
   headline: "Mechanical Engineer focused on Robotics & Autonomous Systems",
-  subtext: "I design and validate real-world hardware systems — from robotic end-effectors to high-altitude research platforms.",
-  primaryCTA: "View Projects",
-  secondaryCTA: "Contact",
+  subtext: "I specialize in hardware design and development with a focus on automation, autonomous systems, and robotics.",
+  primaryCTA: "See Projects",
+  secondaryCTA: "Contact Me",
+  images: {
+    designer: "/project-placeholder.png", // Placeholder for user photo
+    builder: ["/demo-2.svg", "/demo-3.svg", "/project-placeholder.png"] // Placeholders for builder icons
+  }
 };
 
 export const PROJECTS = [
