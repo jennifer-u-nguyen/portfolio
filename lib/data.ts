@@ -10,7 +10,7 @@ export const HERO = {
   },
   images: {
     designer: "/headshot-square.png",
-    builder: ["/demo-2.svg", "/demo-3.svg", "/project-placeholder.png"] // Placeholders for builder icons
+    builder: ["/demo-2.svg", "/cover-2.JPG", "/project-placeholder.png"] // Placeholders for builder icons
   }
 };
 
@@ -20,7 +20,7 @@ export const PROJECTS = [
     id: "es51-robot",
     title: "Harvard ES51 - Turf Wars Robot",
     description: "Developing next-generation autonomous grasping solutions for diverse grocery items.",
-    images: ["/turf-wars-1.mov", "/turf-wars-2.png", "/turf-wars-3.jpeg", "/turf-wars-4.jpeg"],
+    media: ["/turf-wars-1.mov", "/turf-wars-2.png", "/turf-wars-3.jpeg", "/turf-wars-4.jpeg"],
     metric: "Reduced picking error rate by 15% through improved gripper kinematics.",
     tags: ["SOLIDWORKS", "Robotics", "Prototyping"],
     problem: "Existing picking systems struggled with irregular grocery items, leading to high drop rates.",
@@ -32,7 +32,7 @@ export const PROJECTS = [
     id: "keutsch-peapod",
     title: "Keutsch Lab — Stratospheric Particle Exposure Analysis Device",
     description: "A stratospheric research capsule designed for extreme thermal and pressure conditions.",
-    images: ["/peapod-1.JPG", "/peapod-2.JPG", "/peapod-3.JPG", "/peapod-4.png"],
+    media: ["/peapod-1.JPG", "/peapod-2.JPG", "/peapod-3.JPG", "/peapod-4.png"],
     metric: "Achieved 100% data recovery in 3 stratospheric flights.",
     tags: ["SOLIDWORKS", "Materials Selection", "Research"],
     problem: "Needed a lightweight, pressurized capsule to house delicate sensors in near-space conditions.",
@@ -44,7 +44,7 @@ export const PROJECTS = [
     id: "wood-MDEA-gantry",
     title: "Microrobotics Lab — MDEA Gantry",
     description: "High-precision camera calibration tooling for automated workstation assembly.",
-    images: ["/mdea-gantry-1.JPG"],
+    media: ["/mdea-gantry-1.JPG"],
     metric: "Improved calibration speed by 40% with tool-less adjustment mechanism.",
     tags: ["SOLIDWORKS", "Gcode", "Waterjet"],
     problem: "Camera calibration was a manual, time-consuming process causing production bottlenecks.",
@@ -56,7 +56,7 @@ export const PROJECTS = [
     id: "glow-grid",
     title: "Harvard ES50 — Glow Grid",
     description: "Statistical process control analysis to reduce manufacturing cycle time and defects.",
-    images: ["glow-grid-1.mov", "/project-placeholder.png"],
+    media: ["glow-grid-1.mov", "/glow-grid-2.mov", "/glow-grid-3.mov", "/glow-grid-4.mov"],
     metric: "Reduced scrap rate by 12% in composite layup process.",
     tags: ["Data Analysis", "Manufacturing", "Process Improvement"],
     problem: "High variability in composite part thickness led to rework.",
@@ -122,11 +122,11 @@ export const SKILLS = [
   },
   {
     category: "Simulation & Analysis",
-    items: ["COMSOL", "MATLAB", "Thermal Analysis"]
+    items: ["COMSOL", "MATLAB"]
   },
   {
     category: "Robotics & Controls",
-    items: ["ROS/ROS2", "Arduino", "Mechatronics", "Sensors & Actuators"]
+    items: ["ROS/ROS2", "Arduino", "Sensors & Actuators"]
   },
   {
     category: "Programming",

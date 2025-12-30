@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Image from "next/image";
+import { motion, AnimatePresence } from "framer-motion";
 import { PROJECTS } from "@/lib/data";
 
 export default function Projects() {
@@ -27,8 +28,17 @@ function ProjectCard({ project }: { project: typeof PROJECTS[0] }) {
     const [isExpanded, setIsExpanded] = useState(false);
     const [activeImageIndex, setActiveImageIndex] = useState(0);
     const [isImageOpen, setIsImageOpen] = useState(false);
+    const [isFading, setIsFading] = useState(false);
 
-    const activeMedia = project.images[activeImageIndex];
+    const handleImageChange = (newIndex: number) => {
+        setIsFading(true);
+        setTimeout(() => {
+            setActiveImageIndex(newIndex);
+            setIsFading(false);
+        }, 300);
+    };
+
+    const activeMedia = project.media[activeImageIndex];
     const isVideo = activeMedia.endsWith(".mp4") || activeMedia.endsWith(".webm") || activeMedia.endsWith(".mov");
 
     return (
@@ -43,7 +53,10 @@ function ProjectCard({ project }: { project: typeof PROJECTS[0] }) {
                     }}
                 >
                     {isVideo ? (
-                        <video
+                        <motion.video
+                            layoutId={`${project.id}-media-${activeImageIndex}`}
+                            animate={{ opacity: isFading ? 0 : 1 }}
+                            transition={{ duration: 0.3 }}
                             src={activeMedia}
                             autoPlay
                             muted
@@ -52,22 +65,29 @@ function ProjectCard({ project }: { project: typeof PROJECTS[0] }) {
                             className="w-full h-full object-cover"
                         />
                     ) : (
-                        <Image
-                            src={activeMedia}
-                            alt={project.title}
-                            fill
-                            className="object-cover transition-transform duration-500"
-                        />
+                        <motion.div
+                            layoutId={`${project.id}-media-${activeImageIndex}`}
+                            animate={{ opacity: isFading ? 0 : 1 }}
+                            transition={{ duration: 0.3 }}
+                            className="relative w-full h-full"
+                        >
+                            <Image
+                                src={activeMedia}
+                                alt={project.title}
+                                fill
+                                className="object-cover"
+                            />
+                        </motion.div>
                     )}
 
                     {/* Slideshow Arrows (only visible on hover if multiple images) */}
-                    {project.images.length > 1 && (
+                    {project.media.length > 1 && (
                         <>
                             {/* Left Arrow */}
                             <button
                                 onClick={(e) => {
                                     e.stopPropagation();
-                                    setActiveImageIndex((prev) => (prev === 0 ? project.images.length - 1 : prev - 1));
+                                    handleImageChange(activeImageIndex === 0 ? project.media.length - 1 : activeImageIndex - 1);
                                 }}
                                 className="absolute left-2 top-1/2 -translate-y-1/2 p-2 rounded-full bg-white/70 text-black opacity-0 group-hover/image:opacity-100 transition-opacity hover:bg-white/90"
                             >
@@ -80,7 +100,7 @@ function ProjectCard({ project }: { project: typeof PROJECTS[0] }) {
                             <button
                                 onClick={(e) => {
                                     e.stopPropagation();
-                                    setActiveImageIndex((prev) => (prev === project.images.length - 1 ? 0 : prev + 1));
+                                    handleImageChange(activeImageIndex === project.media.length - 1 ? 0 : activeImageIndex + 1);
                                 }}
                                 className="absolute right-2 top-1/2 -translate-y-1/2 p-2 rounded-full bg-white/70 text-black opacity-0 group-hover/image:opacity-100 transition-opacity hover:bg-white/90"
                             >
@@ -92,9 +112,9 @@ function ProjectCard({ project }: { project: typeof PROJECTS[0] }) {
                     )}
 
                     {/* Slideshow Indicators */}
-                    {project.images.length > 1 && (
+                    {project.media.length > 1 && (
                         <div className="absolute bottom-2 left-1/2 -translate-x-1/2 flex gap-1.5 opacity-0 group-hover/image:opacity-100 transition-opacity">
-                            {project.images.map((_, idx) => (
+                            {project.media.map((_, idx) => (
                                 <div
                                     key={idx}
                                     className={`h-1.5 rounded-full transition-all ${idx === activeImageIndex ? "w-4 bg-white" : "w-1.5 bg-white/50"
@@ -182,36 +202,43 @@ function ProjectCard({ project }: { project: typeof PROJECTS[0] }) {
                 </div>
             )}
 
-            {isImageOpen && (
-                <div
-                    className="fixed inset-0 z-50 flex items-center justify-center bg-black/95 p-4 md:p-8"
-                    onClick={(e) => {
-                        e.stopPropagation();
-                        setIsImageOpen(false);
-                    }}
-                >
-                    <div
-                        className="relative w-full h-full flex items-center justify-center pointer-events-none"
+            <AnimatePresence>
+                {isImageOpen && (
+                    <motion.div
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        exit={{ opacity: 0 }}
+                        className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 p-4 md:p-8"
+                        onClick={(e) => {
+                            e.stopPropagation();
+                            setIsImageOpen(false);
+                        }}
                     >
-                        {isVideo ? (
-                            <video
-                                src={activeMedia}
-                                controls
-                                autoPlay
-                                className="max-h-full max-w-full object-contain rounded-xl overflow-hidden shadow-2xl pointer-events-auto"
-                                onClick={(e) => e.stopPropagation()}
-                            />
-                        ) : (
-                            <img
-                                src={activeMedia}
-                                alt={project.title}
-                                className="max-h-full max-w-full object-contain rounded-xl shadow-2xl pointer-events-auto"
-                                onClick={(e) => e.stopPropagation()}
-                            />
-                        )}
-                    </div>
-                </div>
-            )}
+                        <div
+                            className="relative w-full h-full flex items-center justify-center pointer-events-none"
+                        >
+                            {isVideo ? (
+                                <motion.video
+                                    layoutId={`${project.id}-media-${activeImageIndex}`}
+                                    src={activeMedia}
+                                    controls
+                                    autoPlay
+                                    className="max-h-full max-w-full object-contain rounded-xl overflow-hidden shadow-2xl pointer-events-auto"
+                                    onClick={(e) => e.stopPropagation()}
+                                />
+                            ) : (
+                                <motion.img
+                                    layoutId={`${project.id}-media-${activeImageIndex}`}
+                                    src={activeMedia}
+                                    alt={project.title}
+                                    className="max-h-full max-w-full object-contain rounded-xl shadow-2xl pointer-events-auto"
+                                    onClick={(e) => e.stopPropagation()}
+                                />
+                            )}
+                        </div>
+                    </motion.div>
+                )}
+            </AnimatePresence>
         </div>
     );
 }
