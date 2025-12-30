@@ -10,7 +10,7 @@ export const HERO = {
   },
   images: {
     designer: "/headshot-square.png",
-    builder: ["/demo-2.svg", "/cover-2.JPG", "/project-placeholder.png"] // Placeholders for builder icons
+    builder: ["/cover-1.png", "/cover-2.jpg", "/cover-3.png"] // Placeholders for builder icons
   }
 };
 
