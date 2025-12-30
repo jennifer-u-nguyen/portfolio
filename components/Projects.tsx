@@ -26,6 +26,7 @@ export default function Projects() {
 function ProjectCard({ project }: { project: typeof PROJECTS[0] }) {
     const [isExpanded, setIsExpanded] = useState(false);
     const [activeImageIndex, setActiveImageIndex] = useState(0);
+    const [isImageOpen, setIsImageOpen] = useState(false);
 
     const activeMedia = project.images[activeImageIndex];
     const isVideo = activeMedia.endsWith(".mp4") || activeMedia.endsWith(".webm") || activeMedia.endsWith(".mov");
@@ -34,7 +35,13 @@ function ProjectCard({ project }: { project: typeof PROJECTS[0] }) {
         <div className="group rounded-2xl border border-border/50 bg-card text-card-foreground shadow-sm transition-all hover:shadow-md overflow-hidden flex flex-col">
             <div className="cursor-pointer" onClick={() => setIsExpanded(!isExpanded)}>
                 {/* Image Section */}
-                <div className="relative aspect-video w-full overflow-hidden bg-muted group/image">
+                <div
+                    className="relative aspect-video w-full overflow-hidden bg-muted group/image"
+                    onClick={(e) => {
+                        e.stopPropagation();
+                        setIsImageOpen(true);
+                    }}
+                >
                     {isVideo ? (
                         <video
                             src={activeMedia}
@@ -171,6 +178,37 @@ function ProjectCard({ project }: { project: typeof PROJECTS[0] }) {
                                 <p className="text-sm leading-relaxed">{project.outcome}</p>
                             </div>
                         </div>
+                    </div>
+                </div>
+            )}
+
+            {isImageOpen && (
+                <div
+                    className="fixed inset-0 z-50 flex items-center justify-center bg-black/95 p-4 md:p-8"
+                    onClick={(e) => {
+                        e.stopPropagation();
+                        setIsImageOpen(false);
+                    }}
+                >
+                    <div
+                        className="relative w-full h-full flex items-center justify-center pointer-events-none"
+                    >
+                        {isVideo ? (
+                            <video
+                                src={activeMedia}
+                                controls
+                                autoPlay
+                                className="max-h-full max-w-full object-contain rounded-xl overflow-hidden shadow-2xl pointer-events-auto"
+                                onClick={(e) => e.stopPropagation()}
+                            />
+                        ) : (
+                            <img
+                                src={activeMedia}
+                                alt={project.title}
+                                className="max-h-full max-w-full object-contain rounded-xl shadow-2xl pointer-events-auto"
+                                onClick={(e) => e.stopPropagation()}
+                            />
+                        )}
                     </div>
                 </div>
             )}
