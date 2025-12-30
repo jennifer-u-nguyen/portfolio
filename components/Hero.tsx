@@ -22,15 +22,15 @@ export default function Hero() {
                                 className="object-cover"
                             />
                         </div>
-                        <h1 className="font-serif text-6xl md:text-8xl lg:text-9xl text-foreground">
-                            Designer
+                        <h1 className="font-['Courier_New'] text-6xl md:text-8xl lg:text-9xl text-foreground">
+                            {HERO.labels.first}
                         </h1>
                     </div>
 
                     {/* Builder Row */}
                     <div className="flex flex-col md:flex-row items-center justify-center gap-6 mb-12">
-                        <h1 className="font-serif text-6xl md:text-8xl lg:text-9xl text-foreground">
-                            Builder
+                        <h1 className="font-['Courier_New'] text-6xl md:text-8xl lg:text-9xl text-foreground">
+                            {HERO.labels.second}
                         </h1>
                         <div className="flex gap-4">
                             {HERO.images.builder.map((img, idx) => (

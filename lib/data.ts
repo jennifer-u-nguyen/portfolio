@@ -1,11 +1,15 @@
 export const HERO = {
   name: "Jennifer Nguyen",
   headline: "Mechanical Engineer focused on Robotics & Autonomous Systems",
-  subtext: "I specialize in hardware design and development with a focus on automation, autonomous systems, and robotics.",
+  subtext: "I specialize in hardware engineering with a focus on automation, autonomous systems, and robotics.",
   primaryCTA: "See Projects",
   secondaryCTA: "Contact Me",
+  labels: {
+    first: "Jennifer",
+    second: "Nguyen"
+  },
   images: {
-    designer: "/project-placeholder.png", // Placeholder for user photo
+    designer: "/headshot-square.png",
     builder: ["/demo-2.svg", "/demo-3.svg", "/project-placeholder.png"] // Placeholders for builder icons
   }
 };
@@ -18,7 +22,7 @@ export const PROJECTS = [
     description: "Developing next-generation autonomous grasping solutions for diverse grocery items.",
     images: ["/project-placeholder.png", "/demo-2.svg", "/demo-3.svg"],
     metric: "Reduced picking error rate by 15% through improved gripper kinematics.",
-    tags: ["Mechanical Design", "Robotics", "Prototyping"],
+    tags: ["SOLIDWORKS", "Robotics", "Prototyping"],
     problem: "Existing picking systems struggled with irregular grocery items, leading to high drop rates.",
     approach: "Designed a new compliant gripper mechanism with adaptive force control.",
     validation: "Conducted 5000+ cycle reliability testing and validated grasp success rate across 50 object types.",
@@ -30,7 +34,7 @@ export const PROJECTS = [
     description: "A stratospheric research capsule designed for extreme thermal and pressure conditions.",
     images: ["/project-placeholder.png"],
     metric: "Achieved 100% data recovery in 3 stratospheric flights.",
-    tags: ["Mechanical Design", "Thermal Analysis", "Research"],
+    tags: ["SOLIDWORKS", "Materials Selection", "Research"],
     problem: "Needed a lightweight, pressurized capsule to house delicate sensors in near-space conditions.",
     approach: "Engineered a carbon-fiber composite shell with active thermal regulation.",
     validation: "Thermal vacuum chamber testing at -60°C and 0.01 atm pressure.",
@@ -42,7 +46,7 @@ export const PROJECTS = [
     description: "High-precision camera calibration tooling for automated workstation assembly.",
     images: ["/project-placeholder.png"],
     metric: "Improved calibration speed by 40% with tool-less adjustment mechanism.",
-    tags: ["Mechanical Design", "DFM", "Optics"],
+    tags: ["SOLIDWORKS", "Gcode", "Waterjet"],
     problem: "Camera calibration was a manual, time-consuming process causing production bottlenecks.",
     approach: "Designed a precise 6-DOF adjustment mount with kinematic coupling.",
     validation: "Verified positional repeatability to within 50 microns.",
@@ -52,7 +56,7 @@ export const PROJECTS = [
     id: "glow-grid",
     title: "Harvard ES50 — Glow Grid",
     description: "Statistical process control analysis to reduce manufacturing cycle time and defects.",
-    images: ["/project-placeholder.png"],
+    images: ["glow-grid-1.mov", "/project-placeholder.png"],
     metric: "Reduced scrap rate by 12% in composite layup process.",
     tags: ["Data Analysis", "Manufacturing", "Process Improvement"],
     problem: "High variability in composite part thickness led to rework.",

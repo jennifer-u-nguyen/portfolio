@@ -27,19 +27,31 @@ function ProjectCard({ project }: { project: typeof PROJECTS[0] }) {
     const [isExpanded, setIsExpanded] = useState(false);
     const [activeImageIndex, setActiveImageIndex] = useState(0);
 
-    // Mouse handlers removed in favor of arrow buttons
+    const activeMedia = project.images[activeImageIndex];
+    const isVideo = activeMedia.endsWith(".mp4") || activeMedia.endsWith(".webm") || activeMedia.endsWith(".mov");
 
     return (
         <div className="group rounded-2xl border border-border/50 bg-card text-card-foreground shadow-sm transition-all hover:shadow-md overflow-hidden flex flex-col">
             <div className="cursor-pointer" onClick={() => setIsExpanded(!isExpanded)}>
                 {/* Image Section */}
                 <div className="relative aspect-video w-full overflow-hidden bg-muted group/image">
-                    <Image
-                        src={project.images[activeImageIndex]}
-                        alt={project.title}
-                        fill
-                        className="object-cover transition-transform duration-500"
-                    />
+                    {isVideo ? (
+                        <video
+                            src={activeMedia}
+                            autoPlay
+                            muted
+                            loop
+                            playsInline
+                            className="w-full h-full object-cover"
+                        />
+                    ) : (
+                        <Image
+                            src={activeMedia}
+                            alt={project.title}
+                            fill
+                            className="object-cover transition-transform duration-500"
+                        />
+                    )}
 
                     {/* Slideshow Arrows (only visible on hover if multiple images) */}
                     {project.images.length > 1 && (
