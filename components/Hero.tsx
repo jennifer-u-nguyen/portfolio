@@ -12,8 +12,15 @@ const pressStart2P = Press_Start_2P({
 
 export default function Hero() {
     return (
-        <section id="hero" className="min-h-screen flex flex-col justify-center pt-16 pb-12">
-            <div className="container mx-auto px-4 md:px-6">
+        <section id="hero" className="relative min-h-screen flex flex-col justify-center pt-16 pb-12 overflow-hidden bg-white">
+
+            {/* Background Gradient Blobs */}
+            <div className="absolute top-0 left-0 w-full h-[800px] z-0 pointer-events-none overflow-hidden">
+                {/* Wide horizontal band effect */}
+                <div className="absolute top-[-400px] left-1/2 -translate-x-1/2 w-[200%] h-[800px] bg-[#5895e8]/50 rounded-[100%] blur-[100px]" />
+            </div>
+
+            <div className="container mx-auto px-4 md:px-6 relative z-10">
 
                 {/* Main Card Container */}
                 <div className="max-w-5xl mx-auto bg-white rounded-[2.5rem] shadow-sm border border-black/5 p-8 md:p-16 text-center animate-in fade-in zoom-in-95 duration-700">

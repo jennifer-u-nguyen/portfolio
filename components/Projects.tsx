@@ -174,10 +174,7 @@ function ProjectCard({ project }: { project: typeof PROJECTS[0] }) {
                             ))}
                         </div>
 
-                        {/* Metric */}
-                        <div className="inline-block rounded-lg bg-primary/5 px-3 py-1 text-sm text-primary font-medium">
-                            {project.metric}
-                        </div>
+
 
                         {/* Details Grid */}
                         <div className="space-y-4">
