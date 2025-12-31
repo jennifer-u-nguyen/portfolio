@@ -10,7 +10,7 @@ export const HERO = {
   },
   images: {
     designer: "/headshot-square.png",
-    builder: ["/cover-1.png", "/cover-2.jpg", "/cover-3.png"] // Placeholders for builder icons
+    builder: ["/cover-1.jpg", "/cover-2.jpg", "/cover-3.jpg"] // Placeholders for builder icons
   }
 };
 
@@ -20,7 +20,7 @@ export const PROJECTS = [
     id: "es51-robot",
     title: "Harvard ES51 - Turf Wars Robot",
     description: "Needed a robot capable of driving up a 15 degree slope and picking up and placing rings, spheres, and cubes to maximize points.",
-    media: ["/turf-wars-1.mov", "/turf-wars-2.png", "/turf-wars-3.jpeg", "/turf-wars-4.jpeg"],
+    media: ["/turf-wars-1.mov", "/turf-wars-5.mov", "/turf-wars-2.png", "/turf-wars-3.jpeg", "/turf-wars-4.jpeg"],
     metric: "Reduced picking error rate by 15% through improved gripper kinematics.",
     tags: ["SOLIDWORKS", "CNC Mill", "Lasercut", "Bandsaw", "Drill Press"],
     problem: "Needed a robot capable of driving up a 15 degree slope and picking up and placing rings, spheres, and cubes to maximize points.",

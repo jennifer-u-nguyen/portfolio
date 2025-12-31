@@ -3,6 +3,12 @@
 import Link from "next/link";
 import Image from "next/image";
 import { HERO } from "@/lib/data";
+import { Press_Start_2P } from "next/font/google";
+
+const pressStart2P = Press_Start_2P({
+    weight: "400",
+    subsets: ["latin"],
+});
 
 export default function Hero() {
     return (
@@ -22,14 +28,14 @@ export default function Hero() {
                                 className="object-cover"
                             />
                         </div>
-                        <h1 className="font-['Courier_New'] text-6xl md:text-8xl lg:text-9xl text-foreground">
+                        <h1 className={`${pressStart2P.className} text-4xl md:text-6xl lg:text-7xl text-foreground`}>
                             {HERO.labels.first}
                         </h1>
                     </div>
 
                     {/* Builder Row */}
                     <div className="flex flex-col md:flex-row items-center justify-center gap-6 mb-12">
-                        <h1 className="font-['Courier_New'] text-6xl md:text-8xl lg:text-9xl text-foreground">
+                        <h1 className={`${pressStart2P.className} text-4xl md:text-6xl lg:text-7xl text-foreground`}>
                             {HERO.labels.second}
                         </h1>
                         <div className="flex gap-4">
