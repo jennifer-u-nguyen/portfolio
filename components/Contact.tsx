@@ -8,8 +8,8 @@ export default function Contact() {
             <div className="container mx-auto px-4 md:px-6 text-center">
                 <h2 className="text-3xl font-bold tracking-tight mb-6">Get In Touch</h2>
                 <p className="text-primary-foreground/80 mb-8 max-w-xl mx-auto">
-                    I'm currently looking for new opportunities in hardware engineering and robotics.
-                    If you have a project in mind or just want to chat engineering, feel free to reach out.
+                    I'm currently looking for new hardware engineering opportunities.
+                    If you have a project in mind or just want to chat engineering, feel free to reach out!
                 </p>
 
                 <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
