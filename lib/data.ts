@@ -52,7 +52,7 @@ export const PROJECTS = [
     id: "glow-grid",
     title: "Harvard ES50 — Glow Grid",
     description: "A reactive, sensor-driven LED dance floor that responds to user interaction and logs engagement metrics, developed for Harvard’s ES51 course.",
-    media: ["/glow-grid-1.mov", "/glow-grid-2.mov", "/glow-grid-3.mov", "/glow-grid-4.mov", "/glow-grid-5.mov"],
+    media: ["/glow-grid-1.mov", "/glow-grid-2.mov", "/glow-grid-3.mov", "/glow-grid-4.mov"],
     tags: ["SOLIDWORKS", "Rapid Prototyping", "Soldering", "Circuit Design", "Lasercutter"],
     problem: "Needed a dance floor that randomly generates new tiles for the user to select, senses user interaction, and tracks metrics such as reaction time, score, and game length.",
     approach: "Designed electric schematics to create custom pressure sensing tiles, wrote micronctroller code to sense user interaction, and fabricated dance board prototype.",
