@@ -20,7 +20,7 @@ export const PROJECTS = [
     title: "Harvard ES51 —Turf Wars Robot",
     description: "A remote-controlled robot designed for object manipulation and pick-and-place tasks, built to compete in Harvard’s ES51 Turf Wars competition.",
     media: ["/turf-wars-1.mov", "/turf-wars-5.mov", "/turf-wars-2.png", "/turf-wars-3.jpeg", "/turf-wars-4.jpeg"],
-    tags: ["SOLIDWORKS", "CNC Mill", "Molding", "Lasercut", "Bandsaw", "Drill Press"],
+    tags: ["SOLIDWORKS", "CNC Mill", "Molding", "Lasercutting", "Bandsaw", "Drill Press"],
     problem: "Needed a robot capable of driving up a 15 degree slope and picking up and placing rings, spheres, and cubes to maximize points.",
     approach: "Designed robot body, gripper, arms, wheels, and drivetrain in SOLIDWORKS, prototyped and fabricated with a variety of fabrication techniques from CNC milling to molding custom silicon wheels.",
     validation: "Conducted 20+ successful pick and place cycles with each object type and 20+ successful slope drives on a 15 degree incline.",
@@ -31,7 +31,7 @@ export const PROJECTS = [
     title: "Keutsch Lab — Stratospheric Particle Exposure Analysis Device",
     description: "A high-altitude balloon payload designed to expose and analyze particle samples under stratospheric UV, pressure, and thermal conditions in support of emerging solar engineering research.",
     media: ["/peapod-1.JPG", "/peapod-2.JPG", "/peapod-3.JPG", "/peapod-4.png"],
-    tags: ["SOLIDWORKS", "3D Printing", "Composites", "Arduino", "Thermal Analysis"],
+    tags: ["SOLIDWORKS", "GD&T", "DFM", "DFA", "Rapid Prototyping", "Electromechanical Integration", "Python", "3D Printing"],
     problem: "Needed a lightweight, pressurized capsule to expose samples to the stratosphere and return to the troposphere safely.",
     approach: "Designed and tested new body in SOLIDWORKS, created GD&T drawings for third-party manufacturing, integrated electrical subsystems with microcontrollers and mechanical actuators.",
     validation: "Performed pressure system bench testing to confirm device's abiility to maintain pressure differential in sample chamber. Tentative thermal testing in lab environment.",
@@ -53,7 +53,7 @@ export const PROJECTS = [
     title: "Harvard ES50 — Glow Grid",
     description: "A reactive, sensor-driven LED dance floor that responds to user interaction and logs engagement metrics, developed for Harvard’s ES51 course.",
     media: ["/glow-grid-1.mov", "/glow-grid-2.mov", "/glow-grid-3.mov", "/glow-grid-4.mov"],
-    tags: ["SOLIDWORKS", "Rapid Prototyping", "Soldering", "Circuit Design", "Lasercutter"],
+    tags: ["SOLIDWORKS", "Rapid Prototyping", "Soldering", "Circuit Design", "Lasercutting"],
     problem: "Needed a dance floor that randomly generates new tiles for the user to select, senses user interaction, and tracks metrics such as reaction time, score, and game length.",
     approach: "Designed electric schematics to create custom pressure sensing tiles, wrote micronctroller code to sense user interaction, and fabricated dance board prototype.",
     validation: "Verified functionality of tiles in prototypes by stress testing tiles in 50+ user cycles.",
@@ -67,31 +67,53 @@ export const EXPERIENCE = {
       company: "Amazon Grocery Robotics & Automation",
       role: "Hardware Development Engineer Intern",
       period: "May - August 2025",
-      description: "Developed an autonomous robotic picking system fully integrated with vision, motion control, and end-of-arm tooling"
+      description: "Developed an autonomous robotic picking system fully integrated with vision, motion control, and end-of-arm tooling",
+      bullets: [
+        "Designed and developed a custom suction end-effector (EOAT) in SOLIDWORKS, optimizing geometry, materials, and vacuum flow for handling of irregular grocery items",
+        "Conducted mechanical validation testing to quantify eligibility (80%), handling accuracy (95%), and throughput improvement (35%), ensuring compliance with performance and reliability targets",
+        "Supported iterative design-for-manufacturing (DFM) refinements through rapid prototyping and testing cycles",
+        "Partnered with the computer vision team to enhance object recognition and pick-point algorithms, improving system repeatability and mechanical alignment",
+        "Coordinated with external vendors to source specialized materials and machine critical components",
+      ]
     },
     {
       company: "Harvard Reimagining Experiential Education & Fabrication (REEF) Makerspace",
       role: "Maker Fellow",
       period: "August 2024 - Present",
-      description: "Trained and advised others in the Harvard SEAS Reimagining Experiential Education & Fabrication (REEF) Makerspace to machine their academic and personal projects. This includes training in laser cutting, dye sublimation, 3D printing, wood shop machinery, casting, soldering, hand tools, etc."
+      description: "Trained and advised others in the Harvard SEAS Reimagining Experiential Education & Fabrication (REEF) Makerspace to machine their academic and personal projects. This includes training in laser cutting, dye sublimation, 3D printing, wood shop machinery, casting, soldering, hand tools, etc.",
     },
     {
       company: "Amazon Robotics & Mechatronics",
       role: "Hardware Development Engineer Intern",
       period: "May - August 2024",
-      description: "Designed multi-camera presentation array, replacing previous scan tunnels to increase item eligibility by over 25%."
+      description: "Designed multi-camera presentation array, replacing previous scan tunnels to increase item eligibility by over 25%.",
+      bullets: [
+        "Applied DFM/DFA principles to create camera array fixture using SOLIDWORKS adhering to project requirements",
+        "Assembled fixture prototype and subsequent design reiterations",
+        "Evaluated performance of varying camera arrays by DOE: performing rate tests, creating heat maps of camera blindspots, and measuring item eligibility, eventually recommending a solution to AMAZON fulfillment centers",
+        "Collaborated with external vendors to procure materials and machine precision components"]
     },
     {
       company: "Lockheed Martin Aeronautics",
-      role: "Product Quality Intern",
+      role: "Product Quality Engineer Intern",
       period: "May - August 2023",
-      description: "Revamped radar processing chips manufacturing process for high manufacturing yield and quality."
+      description: "Revamped radar processing chips manufacturing process for high manufacturing yield and quality.",
+      bullets: [
+        "Performed a Design of Experiments (DOE) to test different parameters (e.g., pressure, temperature, resin mix)",
+        "Used python to analyze wafer-level and package-level test data to identify trends affecting semiconductor yield",
+        "Developed automated dashboards which enabled real-time alerts for anomaly detection to flag defective chips early"
+      ]
     },
     {
       company: "Lockheed Martin Aeronautics",
-      role: "Facility Engineer Intern",
+      role: "Facility and Plant Engineer Intern",
       period: "August 2021 - August 2022",
-      description: "Strategized production reliability by analyzing previous equipment failures and implementing new preventative maintenance strategies."
+      description: "Strategized production reliability by analyzing previous equipment failures and implementing new preventative maintenance strategies.",
+      bullets: [
+        "Developed mapping system by creating CAD asset map databases in Microstation for over 40 buildings and 300 assets at LMCO Aeronautics Headquarters",
+        "Strategized production reliability by analyzing previous equipment failures and implementing new preventative maintenance strategies",
+        "Created preventative capital budgets for production line equipment based on analysis of system failures & risks"
+      ]
     }
   ],
   research: [
@@ -99,13 +121,23 @@ export const EXPERIENCE = {
       company: "Harvard Keutsch Lab",
       role: "Undergraduate Researcher",
       period: "Aug 2024 - Present",
-      description: "Created an opening/closing capsule for a high-altitude balloon (HAB) system that automates the process of exposing chemical samples to the stratosphere upon ascension and safely returns to the troposphere."
+      description: "Created an opening/closing capsule for a high-altitude balloon (HAB) system that automates the process of exposing chemical samples to the stratosphere upon ascension and safely returns to the troposphere.",
+      bullets: [
+        "Qualified materials for UV, temperature, and pressure environments in bench, chamber, and flight tests",
+        "Iteratively refined SOLIDWORKS assemblies and manufacturing drawings based on test data and mechanical performance feedback",
+        "Applied Design for Assembly (DFA) and Design for Manufacturing (DFM) principles to improve system robustness and simplify fabrication"
+      ]
     },
     {
       company: "Harvard Microrobotics Lab",
       role: "Undergraduate Researcher",
       period: "October 2023 - May 2024",
-      description: "Modified a 3D printer to automate multi-layered dielectric actuator elastomer (MDEA) production, a process for producing microelectronics currently performed by hand."
+      description: "Modified a 3D printer to automate multi-layered dielectric actuator elastomer (MDEA) production, a process for producing microelectronics currently performed by hand.",
+      bullets: [
+        "Designed conceptual CAD for modified 3D printer gantry in SOLIDWORKS to account for airtight enclosure, integration of new electronics and pneumatic controls, tray sliding mechanisms, etc.",
+        "Prototyped and assembled the modified printer using water jet, laser cutter, vertical and horizontal bandsaws, drill presses, and 3D printers",
+        "Modified existing 3D printer Gcode to accommodate new hardware"
+      ]
     }
   ]
 };

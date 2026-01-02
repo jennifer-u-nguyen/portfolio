@@ -34,9 +34,18 @@ export default function Experience() {
                                     <p className="text-base font-medium text-foreground/80 mb-2">
                                         {job.role}
                                     </p>
-                                    <p className="text-sm text-muted-foreground leading-relaxed">
+                                    <p className="text-sm text-muted-foreground leading-relaxed mb-3">
                                         {job.description}
                                     </p>
+                                    {(job as any).bullets && (
+                                        <ul className="list-disc pl-4 space-y-1">
+                                            {(job as any).bullets.map((point: string, i: number) => (
+                                                <li key={i} className="text-sm text-muted-foreground/90 pl-1">
+                                                    {point}
+                                                </li>
+                                            ))}
+                                        </ul>
+                                    )}
                                 </div>
                             ))}
                         </div>
@@ -64,9 +73,18 @@ export default function Experience() {
                                     <p className="text-base font-medium text-foreground/80 mb-2">
                                         {job.role}
                                     </p>
-                                    <p className="text-sm text-muted-foreground leading-relaxed">
+                                    <p className="text-sm text-muted-foreground leading-relaxed mb-3">
                                         {job.description}
                                     </p>
+                                    {(job as any).bullets && (
+                                        <ul className="list-disc pl-4 space-y-1">
+                                            {(job as any).bullets.map((point: string, i: number) => (
+                                                <li key={i} className="text-sm text-muted-foreground/90 pl-1">
+                                                    {point}
+                                                </li>
+                                            ))}
+                                        </ul>
+                                    )}
                                 </div>
                             ))}
                         </div>
