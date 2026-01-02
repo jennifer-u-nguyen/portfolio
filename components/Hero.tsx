@@ -14,11 +14,34 @@ export default function Hero() {
     return (
         <section id="hero" className="relative min-h-screen flex flex-col justify-center pt-16 pb-12 overflow-hidden bg-white">
 
-            {/* Background Gradient Blobs */}
-            <div className="absolute top-0 left-0 w-full h-[800px] z-0 pointer-events-none overflow-hidden">
-                {/* Wide horizontal band effect */}
-                <div className="absolute top-[-400px] left-1/2 -translate-x-1/2 w-[200%] h-[800px] bg-[#5895e8]/50 rounded-[100%] blur-[100px]" />
-            </div>
+            {/* Pixelated Stepped Gradient Background */}
+            <div
+                className="absolute top-0 left-0 w-full h-full z-0 pointer-events-none opacity-90"
+                style={{
+                    background: `linear-gradient(to bottom, 
+                        #0f2fb2 0%, #0f2fb2 5%,
+                        #153bba 5%, #153bba 10%,
+                        #1b48c3 10%, #1b48c3 15%,
+                        #2254cb 15%, #2254cb 20%,
+                        #2861d4 20%, #2861d4 25%,
+                        #2e6ddc 25%, #2e6ddc 30%,
+                        #347ae5 30%, #347ae5 35%,
+                        #3a86ed 35%, #3a86ed 40%,
+                        #4193f5 40%, #4193f5 45%,
+                        #479efd 45%, #479efd 50%,
+                        #59a8fd 50%, #59a8fd 55%,
+                        #6bb2fe 55%, #6bb2fe 60%,
+                        #7dbcfe 60%, #7dbcfe 65%,
+                        #8fc6fe 65%, #8fc6fe 70%,
+                        #a1d0fe 70%, #a1d0fe 75%,
+                        #b4dafe 75%, #b4dafe 80%,
+                        #c6e4fe 80%, #c6e4fe 85%,
+                        #d8eeff 85%, #d8eeff 90%,
+                        #eaf8ff 90%, #eaf8ff 95%,
+                        #ffffff 95%, #ffffff 100%
+                    )`
+                }}
+            />
 
             <div className="container mx-auto px-4 md:px-6 relative z-10">
 

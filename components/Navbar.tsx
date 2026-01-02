@@ -32,7 +32,7 @@ export default function Navbar() {
             <div className="container mx-auto px-4 md:px-6 h-16 flex items-center justify-between">
                 <Link
                     href="#hero"
-                    className="text-lg font-semibold tracking-tight hover:opacity-80 transition-opacity"
+                    className={`text-lg font-semibold tracking-tight hover:opacity-80 transition-opacity ${isScrolled ? "text-foreground" : "text-white"}`}
                 >
                     Jennifer Nguyen
                 </Link>
@@ -43,7 +43,7 @@ export default function Navbar() {
                         <Link
                             key={item.href}
                             href={item.href}
-                            className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
+                            className={`text-sm font-medium transition-colors ${isScrolled ? "text-muted-foreground hover:text-foreground" : "text-white/80 hover:text-white"}`}
                         >
                             {item.label}
                         </Link>
