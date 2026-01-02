@@ -6,6 +6,14 @@ import { motion, AnimatePresence } from "framer-motion";
 import { PROJECTS } from "@/lib/data";
 
 export default function Projects() {
+    const [expandedIds, setExpandedIds] = useState<string[]>([]);
+
+    const toggleProject = (id: string) => {
+        setExpandedIds(prev =>
+            prev.includes(id) ? [] : [id]
+        );
+    };
+
     return (
         <section id="projects" className="py-24 bg-secondary/30">
             <div className="container mx-auto px-4 md:px-6">
@@ -16,7 +24,12 @@ export default function Projects() {
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
                     {PROJECTS.map((project) => (
-                        <ProjectCard key={project.id} project={project} />
+                        <ProjectCard
+                            key={project.id}
+                            project={project}
+                            isExpanded={expandedIds.includes(project.id)}
+                            onToggle={() => toggleProject(project.id)}
+                        />
                     ))}
                 </div>
             </div>
@@ -24,8 +37,7 @@ export default function Projects() {
     );
 }
 
-function ProjectCard({ project }: { project: typeof PROJECTS[0] }) {
-    const [isExpanded, setIsExpanded] = useState(false);
+function ProjectCard({ project, isExpanded, onToggle }: { project: typeof PROJECTS[0], isExpanded: boolean, onToggle: () => void }) {
     const [activeImageIndex, setActiveImageIndex] = useState(0);
     const [isImageOpen, setIsImageOpen] = useState(false);
     const [isFading, setIsFading] = useState(false);
@@ -43,7 +55,7 @@ function ProjectCard({ project }: { project: typeof PROJECTS[0] }) {
 
     return (
         <div className="group rounded-2xl border border-border/50 bg-card text-card-foreground shadow-sm transition-all hover:shadow-md overflow-hidden flex flex-col">
-            <div className="cursor-pointer" onClick={() => setIsExpanded(!isExpanded)}>
+            <div className="cursor-pointer" onClick={onToggle}>
                 {/* Image Section */}
                 <div
                     className="relative aspect-video w-full overflow-hidden bg-muted group/image"
@@ -54,7 +66,6 @@ function ProjectCard({ project }: { project: typeof PROJECTS[0] }) {
                 >
                     {isVideo ? (
                         <motion.video
-                            layoutId={`${project.id}-media-${activeImageIndex}`}
                             animate={{ opacity: isFading ? 0 : 1 }}
                             transition={{ duration: 0.3 }}
                             src={activeMedia}
@@ -66,7 +77,6 @@ function ProjectCard({ project }: { project: typeof PROJECTS[0] }) {
                         />
                     ) : (
                         <motion.div
-                            layoutId={`${project.id}-media-${activeImageIndex}`}
                             animate={{ opacity: isFading ? 0 : 1 }}
                             transition={{ duration: 0.3 }}
                             className="relative w-full h-full"
@@ -140,7 +150,7 @@ function ProjectCard({ project }: { project: typeof PROJECTS[0] }) {
                         className="text-sm font-medium text-primary hover:underline flex items-center gap-1 mt-4"
                         onClick={(e) => {
                             e.stopPropagation();
-                            setIsExpanded(!isExpanded);
+                            onToggle();
                         }}
                     >
                         {isExpanded ? "Show Less" : "View Details"}
@@ -216,7 +226,6 @@ function ProjectCard({ project }: { project: typeof PROJECTS[0] }) {
                         >
                             {isVideo ? (
                                 <motion.video
-                                    layoutId={`${project.id}-media-${activeImageIndex}`}
                                     src={activeMedia}
                                     controls
                                     autoPlay
@@ -225,7 +234,6 @@ function ProjectCard({ project }: { project: typeof PROJECTS[0] }) {
                                 />
                             ) : (
                                 <motion.img
-                                    layoutId={`${project.id}-media-${activeImageIndex}`}
                                     src={activeMedia}
                                     alt={project.title}
                                     className="max-h-full max-w-full object-contain rounded-xl shadow-2xl pointer-events-auto"
