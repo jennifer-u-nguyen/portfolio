@@ -30,7 +30,7 @@ export const PROJECTS = [
     id: "keutsch-peapod",
     title: "Keutsch Lab — Stratospheric Particle Exposure Analysis Device",
     description: "A high-altitude balloon payload designed to expose and analyze particle samples under stratospheric UV, pressure, and thermal conditions in support of emerging solar engineering research.",
-    media: ["/peapod-1.JPG", "/peapod-2.JPG", "/peapod-3.JPG", "/peapod-4.png"],
+    media: ["/peapod-1.png", "/peapod-2.png", "/peapod-3.png", "/peapod-4.png", "/peapod-5.JPG"],
     tags: ["SOLIDWORKS", "GD&T", "DFM", "DFA", "Rapid Prototyping", "Electromechanical Integration", "Python", "3D Printing"],
     problem: "Needed a lightweight, pressurized capsule to expose samples to the stratosphere and return to the troposphere safely.",
     approach: "Designed and tested new body in SOLIDWORKS, created GD&T drawings for third-party manufacturing, integrated electrical subsystems with microcontrollers and mechanical actuators.",
