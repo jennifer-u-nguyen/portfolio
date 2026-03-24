@@ -145,7 +145,7 @@ export const EXPERIENCE = {
 export const SKILLS = [
   {
     category: "Mechanical & CAD",
-    items: ["SolidWorks", "Fusion 360", "GD&T", "DFM/DFA"]
+    items: ["SolidWorks", "Blender", "Fusion 360", "GD&T", "DFM/DFA"]
   },
   {
     category: "Simulation & Analysis",
